@@ -30,7 +30,9 @@ smiles_help = """  \n  If you don't know SMILES, check this out:
                 https://chemicbook.com/2021/02/13/smiles-strings-explained-for-beginners-part-1.html  \n  """
 
 loading_err = KeyError("""The app encountered a problem in initializing the data. 
-Try to reload the page.""")
+Try to reload the page. If the problem persists, contact molecule.icon@gmail.com""")
+
+problem_mail = '  \n  If the problem persists, contact molecule.icon@gmail.com'
 
 def render_svg(svg):
     """Renders the given svg string."""
@@ -623,5 +625,17 @@ For more options and information, check out the
                     so you can easily reload them in you refresh the page!'''
         )
 
+    # donate
+    st.markdown("""I'm a student and I enjoy working on this project in my free time, especially at night. 
+                If you want to support me with a coffee, just 
+                [click on the caffeine:](https://www.paypal.com/donate/?hosted_button_id=V4LJ3Z3B3KXRY)""")
+
+    html_string = '''<form action="https://www.paypal.com/donate" method="post" target="_top">
+<input type="hidden" name="hosted_button_id" value="V4LJ3Z3B3KXRY" />
+<input type="image" src="https://pics.paypal.com/00/s/MTRiMDhhZmMtMTE0YS00MWNjLWJmYjItM2RhZjAwNmFjZGVh/file.PNG" 
+border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_IT/i/scr/pixel.gif" width="1" height="1" />
+</form>
 '''
     st.markdown(html_string, unsafe_allow_html=True)
+    st.write('For help or feedback, contact molecule.icon@gmail.com')
